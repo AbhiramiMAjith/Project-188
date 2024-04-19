@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="control.js"></script>
+    </head>
+    <body>
+        <a-scene background="color:black">
+            <a-entity id="camera" look-controls camera position="0 0 0"></a-entity>
+
+            <a-assets>
+                <a-asset-item id="bg-model" src="./assets/solar_system_animation/scene.gltf"></a-asset-item>
+                <a-asset-item id="spaceship_model" src="./assets/spaceship/scene.gltf"></a-asset-item>
+
+                <a-asset-item id="sun-model" src="./assets/sun (1)/scene.gltf"></a-asset-item>
+                <a-asset-item id="mercury-model" src="./assets/mercury/scene.gltf"></a-asset-item>
+                <a-asset-item id="venus-model" src="./assets/venus/scene.gltf"></a-asset-item>
+                <a-asset-item id="earth-model" src="./assets/earth/scene.gltf"></a-asset-item>
+                <a-asset-item id="mars-model" src="./assets/mars/scene.gltf"></a-asset-item>
+                <a-asset-item id="jupitar" src="./assets/jupitar/scene.gltf"></a-asset-item>
+                <a-asset-item id="saturn" src="./assets/saturn/scene.gltf"></a-asset-item>
+                <a-asset-item id="uranus-model" src="./assets/uranus/scene.gltf"></a-asset-item>
+                <a-asset-item id="neptune-model" src="./assets/neptune/scene.gltf"></a-asset-item>
+            </a-assets>
+
+            <a-entity id="terrain" position="0 0 0" animation="property : position; to:0 0 5000; easing:linear; loop:true; dur:30000" terrain-rotation>
+                <a-entity id="sun" gltf-model="#sun-model" position="0 0 -5000" scale="5 5 5"></a-entity>
+                <a-entity id="mercury" gltf-model="#mercury-model" position="-1500 0 -4500"></a-entity>
+                <a-entity id="venus" gltf-model="#venus-model" position="900 0 -4000" scale="50 50 50"></a-entity>
+                <a-entity id="earth" gltf-model="#earth-model" position="-800 0 -3000"></a-entity>
+                <a-entity id="mars" gltf-model="#mars-model" position="300 0 -2000"></a-entity>
+                <a-entity id="jupitar" gltf-model="#jupitar-model" position="300 0 -2000"></a-entity>
+                <a-entity id="saturn" gltf-model="#saturn-model" position="300 0 -2000"></a-entity>
+                <a-entity id="uranus" gltf-model="#uranus-model" position="300 0 -2000"></a-entity>
+                <a-entity id="neptune" gltf-model="#neptune-model" position="300 0 -2000"></a-entity>
+            </a-entity>
+
+            <a-entity
+            id="spaceship"
+            gltf-model="#spaceship_model"
+            position="0 -7 0"
+            rotation="0 0 0"
+            ship-rotation>
+            </a-entity>
+        </a-scene>
+    </body>
+</html>
